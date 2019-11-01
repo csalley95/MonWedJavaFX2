@@ -1,6 +1,7 @@
 package bsu.comp152;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,14 +14,15 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
+
+
 
 public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
     }
-
+    @Override
     public void start(Stage primaryStage){
         VBox box = new VBox();
         var windowPane = new Scene(box);
@@ -34,7 +36,7 @@ public class Main extends Application {
             var button = new Button(""+num);
             buttonBox.getChildren().add(button);
             button.setMinWidth(50);
-            var eventResponder = new EventHandler<ActionEvent>(){
+            EventHandler<ActionEvent> eventResponder = new EventHandler<ActionEvent>(){
                 @Override
                 public void handle(ActionEvent event){
                     Button numberButton = (Button)event.getSource();
@@ -48,6 +50,7 @@ public class Main extends Application {
 
 
     }
+
 //    @Override
 //    public void start(Stage primaryStage) {
 //        VBox box = new VBox();
